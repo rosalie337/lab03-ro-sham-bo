@@ -1,10 +1,11 @@
 // // import functions and grab DOM elements
+// - Shoot button
+// - Reset button
 
-// - Rock button 
-// - Scissors button
+HTML
+// - Rock radio button 
+// - Scissors radio  button
 // - Paper radio button
-// - Shoot radio button
-// - Reset radio button
 
 
 // Span
