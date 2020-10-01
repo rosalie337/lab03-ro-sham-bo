@@ -9,21 +9,42 @@ const totalDiv = document.getElementById('totalDiv');
 
 // set state
 let wins = 0;
-let losses= 0;
+let losses = 0;
 let draws = 0;
 let total = 0;
 
 shootButton.addEventListener('click', () => {
-
+    
     const selectedChoice = document.querySelector('input[radio]:checked');
     const results = compareNumbers(userShoot, cpuShoot);
     let userShoot = selectedChoice.value;
     let cpuShoot = getRandomThrow();
-
+    
     useResults(results);
 });
 
+// initialize state
+function useResults(results) {
+    if (results === 'Win') {
+        total++;
+        wins++;
+        winsText.textContent = wins;
+    }
+    else if(results === 'Lose') {
+        total++;
+        losses++;
+        lossesText.textContent = loss;
+    }
+    else if(results === 'Draw') {
+        total++;
+        draw++;
+        drawsText.textContent = draw;
+    }
+    resultsDisplay.textContent = results;
+}
+
 // Reset 
+// set event listeners to update state and DOM
 resetButton.addEventListener('click', () => {
 
     wins = 0;
@@ -38,35 +59,3 @@ resetButton.addEventListener('click', () => {
 
     resultsDisplay.textContent = '';
 });
-
-
-
-
-// if (Math.random() < .3) {
-    //     cpuShoot = 'paper'
-    //     cpuShoot = 'rock'
-    // }
-
-// Span
-//     -Wins
-//         -textcontent
-//     -Losses
-//         -textcontent
-//     -Draws
-//         -textcontent
-//     - ThrowResults
-//         -textcontent
-
-//     - Wins
-//     - Draws
-
-
-// Style
-
-// - Rock image
-// - Paper image
-// - Scissors image
-
-// initialize state
-
-// set event listeners to update state and DOM
