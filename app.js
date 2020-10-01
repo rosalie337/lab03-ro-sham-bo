@@ -21,12 +21,32 @@ shootButton.addEventListener('click', () => {
     let cpuShoot = getRandomThrow();
 
     useResults(results);
-})
+});
 
-    // if (Math.random() < .3) {
+// Reset 
+resetButton.addEventListener('click', () => {
+
+    wins = 0;
+    losses = 0;
+    draws = 0;
+    total = 0;
+
+    winsText.textContent = '0';
+    lossesText.textContent = '0';
+    drawsText.textContent = '0';
+    totalText.textContent = '0';
+
+    resultsDisplay.textContent = '';
+});
+
+
+
+
+// if (Math.random() < .3) {
     //     cpuShoot = 'paper'
     //     cpuShoot = 'rock'
     // }
+
 // Span
 //     -Wins
 //         -textcontent
@@ -37,8 +57,6 @@ shootButton.addEventListener('click', () => {
 //     - ThrowResults
 //         -textcontent
 
-// Reset 
-//     - EventListener
 //     - Wins
 //     - Draws
 
