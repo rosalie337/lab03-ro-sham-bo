@@ -7,6 +7,7 @@ const lossDiv = document.getElementById('loss-div');
 const drawDiv = document.getElementById('draw-div')
 const totalDiv = document.getElementById('totalDiv');
 
+// set state
 let wins = 0;
 let losses= 0;
 let draws = 0;
@@ -15,15 +16,17 @@ let total = 0;
 shootButton.addEventListener('click', () => {
 
     const selectedChoice = document.querySelector('input[radio]:checked');
-
+    const results = compareNumbers(userShoot, cpuShoot);
     let userShoot = selectedChoice.value;
-    let cpuShoot = 'scissors';
+    let cpuShoot = getRandomThrow();
+
+    useResults(results);
+})
 
     // if (Math.random() < .3) {
     //     cpuShoot = 'paper'
     //     cpuShoot = 'rock'
     // }
-})
 // Span
 //     -Wins
 //         -textcontent
